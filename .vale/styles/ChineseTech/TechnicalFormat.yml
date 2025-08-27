@@ -1,0 +1,36 @@
+# ChineseTech/TechnicalFormat.yml - Technical Format Standardization for Chinese Documentation
+#
+# Purpose:
+# - Detect inappropriate use of English abbreviations in Chinese technical documents
+# - Ensure consistent formatting standards across documentation
+# - Maintain professional Chinese technical writing standards
+#
+# Rule Type: existence (pattern detection)
+# - Detects specific patterns that should not exist in Chinese technical documents
+# - level: error - format violations must be corrected
+# - Uses regex patterns to match unwanted formatting
+
+extends: existence
+message: "技术文档中应使用规范格式：%s"
+level: error
+tokens:
+  # Temperature abbreviation detection
+  # Purpose: Prevent mixing English abbreviations with Chinese text
+  # Expected: Use full Chinese terms "温度:" instead of English "Temp:"
+  - 'Temp\s*:'        # Detects "Temp:" or "Temp :"
+  - 'temp\s*:'        # Detects "temp:" or "temp :"
+  - 'TEMP\s*:'        # Detects "TEMP:" or "TEMP :"
+  
+  # Pressure abbreviation detection  
+  # Purpose: Maintain Chinese terminology consistency
+  # Expected: Use "压力:" instead of English "Press:"
+  - 'Press\s*:'       # Detects "Press:" or "Press :"
+  - 'press\s*:'       # Detects "press:" or "press :"
+  - 'PRESS\s*:'       # Detects "PRESS:" or "PRESS :"
+  
+  # Flow rate abbreviation detection
+  # Purpose: Ensure Chinese technical terminology usage
+  # Expected: Use "流量:" instead of English "Flow:"
+  - 'Flow\s*:'        # Detects "Flow:" or "Flow :"
+  - 'flow\s*:'        # Detects "flow:" or "flow :"
+  - 'FLOW\s*:'        # Detects "FLOW:" or "FLOW :"

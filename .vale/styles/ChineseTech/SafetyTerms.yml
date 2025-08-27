@@ -1,0 +1,31 @@
+# ChineseTech/SafetyTerms.yml - Safety Terminology Standardization for Chinese Technical Documentation
+#
+# Purpose:
+# - Enforce consistent safety terminology in technical documentation
+# - Ensure proper safety warnings and instructions terminology
+# - Improve clarity and compliance with safety standards
+#
+# Rule Type: substitution (replacement rules)
+# - level: error - critical safety terminology must be corrected
+# - These terms directly impact safety compliance and user understanding
+
+extends: substitution
+message: "安全术语建议使用 '%s' 而不是 '%s'"
+level: error
+ignorecase: false
+swap:
+  # Safety warning terminology standardization
+  # Purpose: Use formal safety instruction terms rather than casual expressions
+  # Context: Safety procedures, warnings, operational instructions
+  # Impact: Critical for safety compliance and liability
+  小心: 注意          # "be careful" → "attention/caution" (formal warning)
+  当心: 注意          # "watch out" → "attention/caution" 
+  留意: 注意          # "pay attention" → "attention/caution"
+  
+  # Personal protective equipment (PPE) terminology
+  # Purpose: Use standardized international PPE terminology
+  # Context: Safety requirements, equipment specifications
+  # Impact: Ensures compliance with safety regulations
+  防护用品: 个人防护装备    # "protective items" → "personal protective equipment"
+  安全装备: 个人防护装备    # "safety equipment" → "personal protective equipment"
+  保护设备: 个人防护装备    # "protective equipment" → "personal protective equipment"

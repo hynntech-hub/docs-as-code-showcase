@@ -1,0 +1,17 @@
+# Temporary files
+*.tmp
+*.bak
+*~
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/settings.json
+
+# Vale temporary files
+.vale/fixtures/
+
+# Log files
+*.log

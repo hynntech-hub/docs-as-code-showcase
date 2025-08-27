@@ -1,0 +1,40 @@
+# ChineseTech/Terminology.yml - Chinese Technical Documentation Terminology Standardization
+# 
+# Purpose: 
+# - Enforce consistent technical terminology usage in Chinese documentation
+# - Suggest standardized technical terms to replace informal or inconsistent language
+# - Improve documentation professionalism and consistency
+#
+# Rule Type: substitution (replacement rules)
+# - When "key" (non-standard term) is detected, suggest replacement with "value" (standard term)
+# - ignorecase: false - case-sensitive matching
+# - level: warning - suggests changes but doesn't block builds
+
+extends: substitution
+message: "建议使用技术术语 '%s' 而不是 '%s'"
+level: warning
+ignorecase: false
+swap:
+  # Equipment terminology standardization
+  # Purpose: Standardize on "设备" (equipment/device) for industrial apparatus
+  # Context: Technical manuals, operation guides, specifications
+  机械: 设备          # "mechanical" → "equipment" 
+  装置: 设备          # "apparatus" → "equipment"
+  仪器: 设备          # "instrument" → "equipment"
+  器械: 设备          # "machinery" → "equipment"
+  
+  # Temperature terminology precision
+  # Purpose: Use precise technical term "温度" instead of colloquial expressions
+  # Context: Technical parameters, measurements, process requirements
+  热度: 温度          # "heat level" → "temperature"
+  冷热: 温度          # "hot/cold" → "temperature"
+  
+  # Pressure system terminology standardization
+  # Purpose: Distinguish between atmospheric pressure and system pressure
+  # Context: Hydraulic systems, pneumatic systems documentation
+  气压: 压力          # "air pressure" → "pressure"
+  
+  # Safety operation terminology optimization
+  # Purpose: Use more precise operational guidance terms
+  # Context: Safety procedures, operational warnings
+  谨慎: 小心          # "cautious" → "careful"
